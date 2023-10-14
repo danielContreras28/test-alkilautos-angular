@@ -1,0 +1,21 @@
+<h1>Nuevo comment</h1>
+<div>
+  <p>cual es el nuevo comment?</p>
+  <form class="form" [formGroup]="commentFormControl">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput value="" formControlName="nameFormControl" [ngModel]="comment.name" (input)="CheckInputValue($event)" />
+      <mat-error *ngIf="commentFormControl.get('nameFormControl')?.errors?.['required']"> Campo obligatorio</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Comentario</mat-label>
+      <textarea  matInput [value]="" formControlName="descriptionFormControl" [ngModel]="comment.body" (input)="CheckInputValue($event)"></textarea>
+      <mat-error *ngIf="commentFormControl.get('descriptionFormControl')?.errors?.['required']"> Campo obligatorio</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="SaveNewComment()">
+    Guardar
+  </button>
+</div>

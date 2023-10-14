@@ -1,0 +1,20 @@
+<mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>{{ post.id }} - {{ titleShort }}</h3>
+      </mat-panel-title>
+      <mat-panel-description class="description-align">
+        <p>{{ bodyShort }}</p>
+        <button mat-stroked-button>Comentarios</button>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.body }}</p>
+    <!-- button edit post -->
+    <button class="button" mat-raised-button color="primary" (click)="openDialog()"><mat-icon>edit</mat-icon> Editar</button>
+    <!-- button delete post -->
+    <button class="button" mat-raised-button color="warn" (click)="deletePost()"><mat-icon>delete</mat-icon> Eliminar</button>
+    <hr>
+    <!-- call comment -->
+    <app-comment></app-comment>
+  </mat-expansion-panel>

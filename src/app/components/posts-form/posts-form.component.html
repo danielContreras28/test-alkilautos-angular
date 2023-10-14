@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Nuevo Post</h1>
+<div mat-dialog-content>
+  <p>cual es el nuevo post?</p>
+  <form class="form" [formGroup]="postFormControl">
+    <mat-form-field>
+      <mat-label>Titulo</mat-label>
+      <input matInput value="post.title" formControlName="titleFormControl" [ngModel]="post.title" />
+      <mat-error *ngIf="postFormControl.get('titleFormControl')?.errors?.['required']"> Campo obligatorio</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Descripción</mat-label>
+      <textarea  matInput [value]="post.body" formControlName="descriptionFormControl" [ngModel]="post.body" ></textarea>
+      <mat-error *ngIf="postFormControl.get('descriptionFormControl')?.errors?.['required']"> Campo obligatorio</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-raised-button cdkFocusInitial color="primary" (click)="SaveNewPost()">
+    Guardar
+  </button>
+</div>

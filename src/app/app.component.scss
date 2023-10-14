@@ -1,0 +1,9 @@
+.container {
+    width: calc(100vw - 30px);
+    height: calc(100vh - 20px);
+    overflow: hidden;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
